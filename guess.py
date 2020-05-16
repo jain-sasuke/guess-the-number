@@ -3,10 +3,10 @@ a = randint(1,100)
 i = 0
 b = 0
 #print(a)
-print ("WELCOME TO GUESS ME!")
+print ("WELCOME TO GUESS THE NUMBER!")
 print("I'm thinking of a number between 1 and 100")
-print("If your guess is more than 10 away from my number, I'll tell you you're COLD")
-print("If your guess is within 10 of my number, I'll tell you you're WARM")
+print("If your guess is more than 10 away from my number, I'll tell you you're in COLD zone")
+print("If your guess is within 10 of my number, I'll tell you you're in WARM zone")
 print("If your guess is farther than your most recent guess, I'll say you're getting COLDER")
 print("If your guess is closer than your most recent guess, I'll say you're getting WARMER")
 print("LET'S PLAY!")
@@ -24,9 +24,11 @@ while True:
             print("Out of bound")
             continue
         elif num == a:
-            
+            # addding number of guesses.
+            i += 1
             print(f'You have guess the number {a} and your guesses are {i}')
             break
+            #  checking for guesses in which zone according to rules.
         elif i >= 1:
             if abs(num - a) <= abs(b - a):
                 b = num
